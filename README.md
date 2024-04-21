@@ -15,4 +15,5 @@ Project Description Here
 
 
 ### Sources Reffered
-
+1. [Terraform EKS Module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest) By Anton Babenko
+2. 
