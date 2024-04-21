@@ -1,6 +1,7 @@
 resource "aws_launch_template" "front_end_launch_template" {
-  name_prefix = "${var.project_name}-eks-worker-nodes"
-  image_id    = var.frontend_app_ami
+  name_prefix          = "${var.project_name}-eks-worker-nodes"
+  image_id             = var.frontend_app_ami
+  security_group_names = [aws_security_group.worker_1_sg.name]
 
   user_data = base64encode(<<EOF
 #!/bin/bash
@@ -13,7 +14,7 @@ EOF
   )
 }
 
-resource "aws_security_group" "worker_sg" {
+resource "aws_security_group" "worker_1_sg" {
   name        = "${var.project_name}-eks-Frontend-worker-nodes-sg"
   description = "Security group for EKS worker nodes"
   vpc_id      = module.default_vpc.vpc_id
@@ -44,7 +45,7 @@ EOF
   )
 }
 
-resource "aws_security_group" "worker_sg" {
+resource "aws_security_group" "worker_2_sg" {
   name        = "${var.project_name}-eks-worker-nodes-sg"
   description = "Security group for EKS worker nodes"
   vpc_id      = module.default_vpc.vpc_id

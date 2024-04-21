@@ -5,10 +5,6 @@ module "efs" {
   name      = "${var.project_name}-efs-drive"
   encrypted = false
 
-  lifecycle_policy = {
-    transition_to_ia = "AFTER_30_DAYS"
-  }
-
   # File system policy
   attach_policy                      = true
   bypass_policy_lockout_safety_check = false

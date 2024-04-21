@@ -2,13 +2,14 @@
 	"Version": "2012-10-17",
 	"Statement": [
 		{
-			"Effect": "Allow",
+			"Sid": "Stmt1713735710041",
 			"Action": [
 				"elasticfilesystem:ClientMount",
 				"elasticfilesystem:ClientWrite",
-				"elasticfilesystem:ClientRead"
+				"elasticfilesystem:DescribeFileSystems"
 			],
-			"Resource": ["arn:aws:elasticfilesystem:*"]
+			"Effect": "Allow",
+			"Resource": "arn:aws:elasticfilesystem:${var.region}:*"
 		}
 	]
 }

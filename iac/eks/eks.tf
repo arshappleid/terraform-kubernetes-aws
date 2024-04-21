@@ -1,3 +1,8 @@
+provider "aws" {
+  region = var.region
+}
+
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
