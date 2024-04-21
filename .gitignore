@@ -1,0 +1,17 @@
+# Ignore terraform files
+**/.terraform/*
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+.terraformrc
+terraform.rc
+# Some mac os file , that you do not want
+.DS_Store
+# Unnessccasry doc files
+**/~$**

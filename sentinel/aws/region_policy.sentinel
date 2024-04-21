@@ -1,0 +1,11 @@
+import "tfplan"
+
+allowed_region = "us-east-1"
+
+main = rule {
+    all tfplan.resources as _, instances {
+        all instances as address, instance {
+            address.startswith("aws_") implies (instance.applied.region is allowed_region)
+        }
+    }
+}

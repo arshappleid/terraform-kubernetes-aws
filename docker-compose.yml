@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+    dev:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                TERRAFORM_VERSION: "1.7.4"
+                TERRAGRUNT_VERSION: "0.28.7"
+                GO_VERSION: "1.21.8-r0"
+        container_name: terraform_env
+        volumes:
+            - ./iac/:/iac
+            - ./scripts/:/scripts
+        working_dir: /iac/
