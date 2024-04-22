@@ -38,8 +38,8 @@ module "efs" {
     posix_example = {
       name = "posix-example"
       posix_user = {
-        gid            = 1001
-        uid            = 1001
+        gid            = 1001 // Files created will be owned by
+        uid            = 1001 // Owner of files
         secondary_gids = [1002]
       }
 
@@ -49,10 +49,18 @@ module "efs" {
     }
     root_example = {
       root_directory = {
-        path = "/my_app_stuff"
+        path = "/all_apps/app1"
         creation_info = {
           owner_gid   = 1001
           owner_uid   = 1001
+          permissions = "755"
+        }
+      },
+      root_directory = {
+        path = "/all_apps/app2"
+        creation_info = {
+          owner_gid   = 1002
+          owner_uid   = 1002
           permissions = "755"
         }
       }

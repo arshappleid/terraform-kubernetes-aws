@@ -19,6 +19,13 @@ Additionally, a sample CI/CD pipeline has been demonstrated, which utilizes Pack
 
 <img src="./docs/images/architecture.png" alt="Architecture Diagram" style="zoom:50%;" />
 
+## Getting Started with development
+Run the following commands step by step
+```
+brew install hashicorp/tap/waypoint
+
+```
+
 ### Sources Reffered
 1. [Terraform EKS Module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest) By Anton Babenko
 2. [Terraform VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) By Anton Babenko
