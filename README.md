@@ -17,8 +17,11 @@ Additionally, a sample CI/CD pipeline has been demonstrated, which utilizes Pack
 
 ## Architecture Diagram
 
-<img src="/Users/pdeol/code/github_projects/kubernetes_deployment/docs/images/architecture.png" alt="Architecture Diagram" style="zoom:50%;" />
+<img src="./docs/images/architecture.png" alt="Architecture Diagram" style="zoom:50%;" />
 
 ### Sources Reffered
 1. [Terraform EKS Module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest) By Anton Babenko
 2. [Terraform VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) By Anton Babenko
+4. [Terraform EFS Module](https://registry.terraform.io/modules/terraform-aws-modules/efs/aws/latest) By Anton Babenko
+5. [Creating and Managing Mount Targets](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html)
+6. [Managing Applications with Amazon EKS](https://docs.aws.amazon.com/architecture-diagrams/latest/modernize-applications-with-microservices-using-amazon-eks/modernize-applications-with-microservices-using-amazon-eks.html)
