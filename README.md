@@ -20,10 +20,11 @@ Additionally, a sample CI/CD pipeline has been demonstrated, which utilizes Pack
 <img src="./docs/images/architecture.png" alt="Architecture Diagram" style="zoom:50%;" />
 
 ## Getting Started with development
-Run the following commands step by step
+Run the following commands step by step , and it will have a frontend container running.
 ```
 brew install hashicorp/tap/waypoint
-
+cd src/frontend && waypoint up
+cd src/backend && waypoint up
 ```
 
 ### Sources Reffered
@@ -32,3 +33,4 @@ brew install hashicorp/tap/waypoint
 4. [Terraform EFS Module](https://registry.terraform.io/modules/terraform-aws-modules/efs/aws/latest) By Anton Babenko
 5. [Creating and Managing Mount Targets](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html)
 6. [Managing Applications with Amazon EKS](https://docs.aws.amazon.com/architecture-diagrams/latest/modernize-applications-with-microservices-using-amazon-eks/modernize-applications-with-microservices-using-amazon-eks.html)
+7. [Waypoint NodeJs Setup](https://github.com/hashicorp/waypoint-examples/blob/main/docker/reactjs/waypoint.hcl)
