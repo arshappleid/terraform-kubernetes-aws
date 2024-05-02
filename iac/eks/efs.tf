@@ -8,18 +8,18 @@ module "efs" {
   # File system policy
   attach_policy                      = true
   bypass_policy_lockout_safety_check = false
-  policy_statements = [
-    {
-      sid     = "Example"
-      actions = ["elasticfilesystem:ClientMount"]
-      principals = [
-        {
-          type        = "AWS"
-          identifiers = ["arn:aws:iam::111122223333:role/EfsReadOnly"]
-        }
-      ]
-    }
-  ]
+  # policy_statements = [
+  #   {
+  #     sid     = "Example"
+  #     actions = ["elasticfilesystem:ClientMount"]
+  #     principals = [
+  #       {
+  #         type        = "AWS"
+  #         identifiers = ["arn:aws:iam::111122223333:role/EfsReadOnly"]
+  #       }
+  #     ]
+  #   }
+  # ]
 
   # Mount targets  - for every az , a mount target in each private subnet
   mount_targets              = { for k, v in zipmap(local.azs, module.default_vpc.private_subnets) : k => { subnet_id = v } }
@@ -29,7 +29,8 @@ module "efs" {
     vpc = {
       # relying on the defaults provdied for EFS/NFS (2049/TCP + ingress)
       description = "NFS ingress from VPC private subnets"
-      cidr_blocks = module.default_vpc.private_subnets
+      cidr_blocks = module.default_vpc.private_subnets_cidr_blocks
+
     }
   }
 

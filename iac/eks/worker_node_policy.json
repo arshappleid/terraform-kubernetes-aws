@@ -9,7 +9,7 @@
 				"elasticfilesystem:DescribeFileSystems"
 			],
 			"Effect": "Allow",
-			"Resource": "arn:aws:elasticfilesystem:${var.region}:*"
+			"Resource": "arn:aws:elasticfilesystem:*"
 		}
 	]
 }

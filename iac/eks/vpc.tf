@@ -17,7 +17,7 @@ module "default_vpc" {
   enable_dns_hostnames = false // Not assign any dns hostnames
 
   // Subnets
-  //public_subnets  = [for key, value in local.azs : cidrsubnet(local.vpc_cidr, 8, key)] // 10.0.0.0/24 , 10.0.1.0/24
+  public_subnets  = [for key, value in local.azs : cidrsubnet(local.vpc_cidr, 8, key)] // 10.0.0.0/24 , 10.0.1.0/24
   private_subnets = [for key, value in local.azs : cidrsubnet(local.vpc_cidr, 8, key + 4)]
   // 10.0.4.0/24 , 10.0.5.0/24
 }
