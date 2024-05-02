@@ -22,7 +22,7 @@ module "efs" {
   ]
 
   # Mount targets  - for every az , a mount target in each private subnet
-  mount_targets              = { for k, v in zipmap(local.azs, module.vpc.private_subnets) : k => { subnet_id = v } }
+  mount_targets              = { for k, v in zipmap(local.azs, module.default_vpc.private_subnets) : k => { subnet_id = v } }
   security_group_description = "Example EFS security group"
   security_group_vpc_id      = module.default_vpc.vpc_id
   security_group_rules = {

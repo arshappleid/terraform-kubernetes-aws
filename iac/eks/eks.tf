@@ -25,7 +25,7 @@ module "eks" {
   }
 
   vpc_id                   = module.default_vpc.vpc_id
-  subnet_ids               = module.default_vpc.public_subnets
+  subnet_ids               = module.default_vpc.private_subnets
   control_plane_subnet_ids = module.default_vpc.private_subnets
 
   # EKS Managed Node Group(s)
