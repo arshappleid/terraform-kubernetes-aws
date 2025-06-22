@@ -22,9 +22,10 @@ Additionally, a sample CI/CD pipeline has been demonstrated, which utilizes Pack
 ## Getting Started with development
 Run the following commands step by step , and it will have a frontend container running.
 ```
-brew install hashicorp/tap/waypoint
-cd src/frontend && waypoint up
-cd src/backend && waypoint up
+cd iac
+terraform validate
+terraform plan
+terraform apply --auto-approve
 ```
 
 ### Sources Reffered
